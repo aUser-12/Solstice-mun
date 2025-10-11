@@ -1,0 +1,314 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOLMUN</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="about_us.css" />
+
+    <link href="https://fonts.cdnfonts.com/css/le-jour" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slideTwo = document.querySelector(".slidetwo");
+      if (!slideTwo) return;
+
+      // Use IntersectionObserver to trigger once when ~35% is visible
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              slideTwo.classList.add("in-view");
+              // play once; stop observing after first trigger
+              observer.unobserve(slideTwo);
+            }
+          },
+          { threshold: 0.35 }
+        );
+        observer.observe(slideTwo);
+      } else {
+        // Fallback if IO not supported
+        const onScroll = () => {
+          const rect = slideTwo.getBoundingClientRect();
+          const vh =
+            window.innerHeight || document.documentElement.clientHeight;
+          if (rect.top < vh * 0.65 && rect.bottom > vh * 0.35) {
+            slideTwo.classList.add("in-view");
+            window.removeEventListener("scroll", onScroll);
+          }
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+      }
+    });
+  </script>
+  <body>
+    <div class="slide slide-one">
+      <div class="navbar">
+        <div class="options">
+          <div class="logo">
+            <img
+              src="wowow_achillies_mun__1_-removebg-preview Background Removed.png"
+              alt=""
+            />
+            <div class="logotext">
+              <span class="logoSOL">SOL</span>
+              <span class="logoMUN">MUN</span>
+            </div>
+          </div>
+
+          <a href="#whatitis" class="option">What it is</a>
+          <a href="#committees" class="option">Committees</a>
+          <a href="#delegateforms" class="option">Delegate forms</a>
+          <a href="#Aboutus" class="option">About us</a>
+          <a href="#contactus" class="option">Contact us</a>
+        </div>
+      </div>
+
+      <div class="background">
+        <div class="drutil">
+          <div class="heading-text">
+            <div class="zeuz">By the power of Zeus...</div>
+            <div class="title">
+              <div class="header">
+                <span class="SOL">SOL</span><span class="MUN">MUN</span>
+              </div>
+              <div class="caption">
+                <hr class="line" />
+                <center>
+                  <div class="slogan">Wisdom. Balance. Glory.</div>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide slidetwo" id="whatitis">
+      <div class="slidetwocontentdrutil"></div>
+      <div class="slidetwologodrutil"></div>
+      <div class="slidetwocontent">
+        <div class="slidetwoactcontent">
+          <div class="slidetwoheading">
+            <span class="miniMUN"
+              >Don't keep the <span class="miniSOL">GODS</span> waiting!</span
+            >
+          </div>
+          <div class="slidetwotext">
+            Greek mythology is not admired enough. Join us at Solistice MUN
+            where we are going to celebrate the fascinating Greek mythology
+            while solving international problems. This MUN is going down in
+            <br /><span class="hydhist">HYDERABADI HISTORY!</span>
+          </div>
+        </div>
+      </div>
+      <div class="slidetwologo">
+        <img
+          src="wowow_achillies_mun__1_-removebg-preview Background Removed.svg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="slide slidethree" id="committees">
+      <div class="drutilthree">
+        <div class="slidethreeheading">The committees</div>
+        <div class="committees">
+          <div class="committee disec">
+            <div class="committee-logo">
+              <img src="Committee logos/DISEC.png" alt="" />
+            </div>
+            <div class="committee-head">DISEC</div>
+            <div class="committedesc">
+              <span>Weapons have devastating effects, let's disarm them!</span>
+            </div>
+          </div>
+          <div class="committee unhrc">
+            <div class="committee-logo">
+              <img src="Committee logos/UNHRC.png" alt="" />
+            </div>
+            <div class="committee-head">UNHRC</div>
+            <div class="committedesc">
+              <span
+                >I am a human, and you are too! Both of our rights matter!</span
+              >
+            </div>
+          </div>
+          <div class="committee loksabha">
+            <div class="committee-logo">
+              <img src="Committee logos/LOK SABHA.png" alt="" />
+            </div>
+            <div class="committee-head">LOK SABHA</div>
+            <div class="committedesc">
+              <span
+                >What are India's politicians up to? Are they ding the right
+                thing?</span
+              >
+            </div>
+          </div>
+          <div class="committee fifa">
+            <div class="committee-logo">
+              <img src="Committee logos/FIFA.png" alt="" />
+            </div>
+            <div class="committee-head">FIFA</div>
+            <div class="committedesc">
+              <span>Messi or Ronaldo? Oh you disagree? Let's debate.</span>
+            </div>
+          </div>
+          <div class="committee odyssey">
+            <div class="committee-logo">
+              <img src="Committee logos/ODDYESSEY.png" alt="" />
+            </div>
+            <div class="committee-head"><div class="miniSOL">ODYSSEY</div></div>
+            <div class="committedesc">
+              <span
+                >For the first time ever, let's have an MUN on a Greek
+                committee!</span
+              >
+            </div>
+          </div>
+          <div class="committee who">
+            <div class="committee-logo">
+              <img src="Committee logos/WHO.png" />
+            </div>
+            <div class="committee-head">WHO</div>
+            <div class="committedesc">
+              <span
+                >Two people die every second. What is the UN doing about
+                it?</span
+              >
+            </div>
+          </div>
+          <div class="committee unsc">
+            <div class="committee-logo">
+              <img src="Committee logos/UNSC.png" alt="" />
+            </div>
+            <div class="committee-head">UNSC</div>
+            <div class="committedesc">
+              <span>We can work better together, not far apart. Peace!</span>
+            </div>
+          </div>
+          <div class="committee trojan">
+            <div class="committee-logo">
+              <img src="Committee logos/TROJAN.png" alt="" />
+            </div>
+            <div class="committee-head">TROJAN</div>
+          </div>
+          <div class="committee ip">
+            <div class="committee-logo">
+              <img src="Committee logos/IP.png" alt="" />
+            </div>
+            <div class="committee-head">IP</div>
+            <div class="committedesc">
+              <span
+                >Learn to ask the right questions, and take the correct
+                shots.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide slidefour" id="delegateforms">
+      <div class="drutilfour">
+        <div class="slidefourhead">Registerations</div>
+        <div class="slidefourtext">
+          To go or not to go? Remeber when you read Percy Jackson but were not
+          finding enough people to talk about it? Well? What are you waiting
+          for?
+        </div>
+        <br />
+        <br />
+        <a
+          href="https://forms.gle/sfBFRWZvZrkrPHqg8"
+          target="_blank"
+          class="linkanchor"
+        >
+          <div class="link">PRIORITY ROUNDS!</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="slide slidefive" id="Aboutus">
+      <div class="drutilfive">
+        <div class="slidefiveheading" onclick="window.location.href='#Aboutus'">
+          <span>About us</span>
+        </div>
+        <div class="slide-two-container">
+          <!-- Top Row -->
+          <div class="row">
+            <div class="half">
+              <div class="person-block">
+                <img src="person.webp" alt="Deputy Secretary General" />
+                <div class="person-title">Secretary General</div>
+                <h1>REDACTED</h1>
+                <h2>REDACTED</h2>
+              </div>
+            </div>
+            <div class="half">
+              <div class="person-block">
+                <img src="person.webp" alt="Secretary General" />
+                <div class="person-title">Deputy Secretary General</div>
+                <h1>REDACTED</h1>
+                <h2>REDACTED</h2>
+              </div>
+            </div>
+            <div class="half">
+              <div class="person-block">
+                <img src="person.webp" alt="Secretary General" />
+                <div class="person-title">Director General</div>
+                <h1>REDACTED</h1>
+                <h2>REDACTED</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Row -->
+          <div class="row">
+            <div class="half">
+              <div class="person-block">
+                <img src="person.webp" alt="Director General" />
+                <div class="person-title">Chare'd affairs</div>
+                <h1>REDACTED</h1>
+                <h2>REDACTED</h2>
+              </div>
+            </div>
+            <div class="half">
+              <div class="person-block">
+                <img src="person.webp" alt="Secretary General" />
+                <div class="person-title">Chare'd affairs</div>
+                <h1>REDACTED</h1>
+                <h2>REDACTED</h2>
+              </div>
+            </div>
+            <div class="half">
+              <div class="person-block">
+                <img src="person.webp" alt="OC Head" />
+                <div class="person-title">USG Finance</div>
+                <h1>REDACTED</h1>
+                <h2>REDACTED</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contactus" id="contactus">
+      <div class="emails">
+        Contact Us Instagram: @solstice.mun <br />Email:
+        solstice.mun25@gmail.com
+      </div>
+      <div class="phonenos" style="margin-left: 10vw">
+        Secretary General: +91 95023 71068 <br />Deputy Secretary General: +91
+        70755 28815 <br />Director General: +91 70759 52327
+      </div>
+    </div>
+  </body>
+</html>

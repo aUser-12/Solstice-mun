@@ -1,0 +1,208 @@
+/* Slide Two & More */
+.slide-two-new {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("Background.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 2rem;
+}
+
+.slide-two-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 90%;
+  max-width: 1400px;
+}
+
+/* Row layout */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.half {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* ensure equal height blocks */
+}
+
+.person-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%; /* stretch to parent half */
+  max-width: 320px; /* keep from growing too wide */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.person-block img {
+  width: 50%;
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.person-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.person-block h1 {
+  font-family: "Le Jour", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0.3rem 0;
+}
+
+.person-block h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ddd;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .half {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .person-block img {
+    width: 60%;
+  }
+
+  .person-block h1 {
+    font-size: 1.2rem;
+  }
+
+  .person-block h2 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Redacted USG styling */
+.usg .committee-head,
+.usg .committee-desc {
+  background: #000;
+  color: transparent; /* hide text */
+  border-radius: 4px;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.usg .committee-head::after,
+.usg .committee-desc::after {
+  content: "[REDACTED]";
+  color: #ffbf00; /* or white, for contrast */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.usg .committee-logo .placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 10px,
+    #111 10px,
+    #111 20px
+  ); /* striped censor look */
+  border-radius: 8px;
+}
+/* USG slide background */
+.usg-slide {
+  background: url("slide3background.jpeg") no-repeat center center;
+  background-size: cover;
+  padding: 60px 20px;
+  color: white;
+  position: relative; /* ensure ::before is relative to this */
+  z-index: 0; /* create stacking context */
+}
+
+.usg-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay for text readability */
+  z-index: -1; /* sits behind text but above background */
+}
+/* USG Slide */
+.slide-usg {
+  background: url(usg-background.jpg) no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usg-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two halves */
+  width: 90%;
+  height: 80%;
+  gap: 2vw;
+}
+
+.usg {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.usg img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  box-shadow: 0 0 10px #ffbf00;
+}
+
+.usg-name {
+  font-family: "Le Jour", serif;
+  font-size: 32px;
+  margin: 0.5rem 0;
+}
+
+.usg-role {
+  font-size: 20px;
+  color: #ffbf00;
+  margin-bottom: 1rem;
+}
+
+.usg-bio {
+  font-size: 16px;
+  line-height: 1.5;
+}
